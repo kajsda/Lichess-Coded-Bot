@@ -22,7 +22,7 @@ cd Stockfish-master/src
 
 # build the binary for CPU with popcnt instruction (e.g. Intel Sandy Bridge)
 if [ "$(g++ -Q -march=native --help=target | grep mpopcnt | grep enabled)" ] ; then
-  make profile-build ARCH=x86-64-modern COMP=gcc
+  make profile-build ARCH=x86-64-bmi2 COMP=gcc
   strip stockfish
   mv stockfish ../../msf
   make clean
