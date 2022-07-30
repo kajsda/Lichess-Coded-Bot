@@ -9,24 +9,17 @@ COPY requirements.txt .
 RUN apt update > aptud.log && apt install -y wget python3 python3-pip p7zip-full > apti.log
 RUN python3 -m pip install --no-cache-dir -r requirements.txt > pip.log
 
-RUN wget --no-check-certificate -nv "https://gitlab.com/OIVAS7572/Goi5.1.bin/-/raw/MEGA/Goi5.1.bin.7z" -O Goi5.1.bin.7z \
-&& 7z e Goi5.1.bin.7z && rm Goi5.1.bin.7z
-RUN wget --no-check-certificate "https://gitlab.com/OIVAS7572/Cerebellum3merge.bin/-/raw/master/Cerebellum3Merge.bin.7z" -O Cerebellum3Merge.bin.7z
-Run 7z e Cerebellum3Merge.bin.7z && rm Cerebellum3Merge.bin.7z
+RUN wget -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36" --no-check-certificate "https://onedrive.live.com/download?cid=547CCA53C39C1EA1&resid=547CCA53C39C1EA1%21599&authkey=AMLXM4n_ZwOk7VQ" -O cubail.7z
+RUN 7zr e cubail.7z && rm cubail.7z
 
-#add variant books 
-RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/antichess.bin" -O antichess.bin
-RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/atomic.bin" -O atomic.bin
-RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/horde.bin" -O horde.bin
-RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/racingKings.bin" -O racingKings.bin
-RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/threeCheck.bin" -O threeCheck.bin
-RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/kingOfTheHill.bin" -O kingofthehill.bin
+RUN wget --no-check-certificate -nv "https://gitlab.com/OIVAS7572/Goi5.1.bin/-/raw/main/Goi5.1.bin.7z" -O Goi5.1.7z
+RUN 7zr e Goi5.1.7z && rm Goi5.1.7z
 
 RUN bash msf.sh
 RUN rm master.zip
 RUN rm -r Stockfish-master
 RUN bash sf.sh
-RUN wget --no-check-certificate "https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/fairy-stockfish-largeboard_x86-64-modern" -O fsf
+RUN wget --no-check-certificate "https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/fairy-stockfish-largeboard_x86-64-bmi2" -O fsf
 
 COPY requirements.txt .
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
