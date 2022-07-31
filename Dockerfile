@@ -15,17 +15,13 @@ RUN 7zr e cubail.7z && rm cubail.7z
 RUN wget --no-check-certificate -nv "https://gitlab.com/OIVAS7572/Goi5.1.bin/-/raw/main/Goi5.1.bin.7z" -O Goi5.1.7z
 RUN 7zr e Goi5.1.7z && rm Goi5.1.7z
 
-RUN bash msf.sh
-RUN rm master.zip
-RUN rm -r Stockfish-master
 RUN bash sf.sh
 
 COPY requirements.txt .
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
 
 RUN chmod +x sf
-RUN chmod +x fsf
-RUN chmod +x msf
+
 # Engine name is here ^^^^^^
 
 CMD python3 run.py
