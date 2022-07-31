@@ -7,7 +7,7 @@ make -v &> /dev/null ||apt install -y make
 g++ -v &> /dev/null || install -y build-essential
 
 # download the Stockfish source code
-wget https://github.com/ddugovic/Stockfish/archive/master.zip
+wget https://github.com/ianfab/Fairy-Stockfish/archive/refs/heads/master.zip
 unzip master.zip
 cd Stockfish-master/src
 
@@ -24,7 +24,7 @@ cd Stockfish-master/src
 if [ "$(g++ -Q -march=native --help=target | grep mpopcnt | grep enabled)" ] ; then
   make profile-build ARCH=x86-64-bmi2 COMP=gcc
   strip stockfish
-  mv stockfish ../../msf
+  mv stockfish ../../fsf
   make clean
 fi
 
