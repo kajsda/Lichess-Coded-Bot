@@ -16,13 +16,11 @@ RUN wget --no-check-certificate -nv "https://gitlab.com/OIVAS7572/Goi5.1.bin/-/r
 RUN 7zr e Goi5.1.7z && rm Goi5.1.7z
 
 RUN bash sf.sh
-RUN bash msf.sh
 
 COPY requirements.txt .
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
 
 RUN chmod +x sf
-RUN chmod +x fsf
 
 # Engine name is here ^^^^^^
 
