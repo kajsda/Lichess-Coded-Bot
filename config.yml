@@ -4,6 +4,13 @@ url: "https://lichess.org/"  # Lichess base URL.
 engine:                      # Engine settings.
   dir: "./"          # Directory containing the engine. This can be an absolute path or one relative to lichess-bot/.
   name: "sf"        # Binary name of the engine to use.
+  Atomic: "fsf"  # Binary name of the engine for atomic variant to use.
+  Antichess: "fsf"  # Binary name of the engine for antichess variant to use.
+  Crazyhouse: "fsf"  # Binary name of the engine for crazyhouse variant to use.
+  Horde: "fsf"   # Binary name of the engine for horde variant to use.
+  King of the Hill: "fsf"   # Binary name of the engine for koth variant to use.
+  Racing Kings: "fsf"  # Binary name of the engine for racing kings variant to use.
+  Three-check: "fsf"   # Binary name of the engine for three check variant to use.
   working_dir: ""            # Directory where the chess engine will read and write files. If blank or missing, the current directory is used.
   protocol: "uci"            # "uci" or "xboard"
   ponder: true               # Think on opponent's time.
@@ -60,7 +67,6 @@ engine:                      # Engine settings.
 #   Hash: 256
   uci_options:               # arbitrary UCI options passed to the engine
  
-option name Contempt type spin: 24
 option name Analysis Contempt type combo: Both var Off var White var Black var Both
 option name Threads type spin: 30
 option name Hash type spin: 256
@@ -124,14 +130,14 @@ challenge:                   # Incoming challenges.
   variants:                  # Chess variants to accept (https://lichess.org/variant).
     - standard
 #   - fromPosition
-#   - antichess
-#   - atomic
+    - antichess
+    - atomic
     - chess960
-#   - crazyhouse
-#   - horde
-#   - kingOfTheHill
-#   - racingKings
-#   - threeCheck
+    - crazyhouse
+    - horde
+    - kingOfTheHill
+    - racingKings
+    - threeCheck
   time_controls:             # Time controls to accept.
     - bullet
     - blitz
