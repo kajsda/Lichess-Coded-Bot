@@ -1,4 +1,4 @@
-token: "lip_gFM3iZUIqxL0dwT2FZEN"    # Lichess OAuth2 Token.
+token: "lip_RDbQF2CKW0wwy294zj7G"    # Lichess OAuth2 Token.
 url: "https://lichess.org/"  # Lichess base URL.
 
 engine:                      # Engine settings.
@@ -68,7 +68,7 @@ option name MultiPV type spin: 1
 option name Skill Level type spin: 20
 option name Move Overhead type spin: 100
 option name Slow Mover type spin: 80
-option name nodestime type spin: 1000
+option name nodestime type spin: 0
 option name UCI_Chess960 type check: true
 option name UCI_AnalyseMode type check: true
 option name UCI_Elo type spin: 2850
@@ -117,7 +117,7 @@ challenge:                   # Incoming challenges.
   accept_bot: true          # Accepts challenges coming from other bots.
   only_bot: false            # Accept challenges by bots only.
   max_increment: 180         # Maximum amount of increment to accept a challenge. The max is 180. Set to 0 for no increment.
-  min_increment: 0           # Minimum amount of increment to accept a challenge.
+  min_increment: 1           # Minimum amount of increment to accept a challenge.
   max_base: 315360000        # Maximum amount of base time to accept a challenge. The max is 315360000 (10 years).
   min_base: 1                # Minimum amount of base time to accept a challenge.
   variants:                  # Chess variants to accept (https://lichess.org/variant).
