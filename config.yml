@@ -8,7 +8,7 @@ engine:                      # Engine settings.
   protocol: "uci"            # "uci" or "xboard"
   ponder: true               # Think on opponent's time.
   polyglot:
-    enabled: true           # Activate polyglot book.
+    enabled: false           # Activate polyglot book.
     book:
       standard:              # List of book file paths for variant standard.
         - cubail.bin
@@ -62,12 +62,12 @@ engine:                      # Engine settings.
  
 option name Analysis Contempt type combo: Both var Off var White var Black var Both
 option name Threads type spin: 30
-option name Hash type spin: 4096
+option name Hash type spin: 16
 option name Ponder type check: true
 option name MultiPV type spin: 1
 option name Skill Level type spin: 20
-option name Move Overhead type spin: 1000
-option name Slow Mover type spin: 150
+option name Move Overhead type spin: 90
+option name Slow Mover type spin: 80
 option name nodestime type spin: 0
 option name UCI_Chess960 type check: true
 option name UCI_AnalyseMode type check: true
