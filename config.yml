@@ -3,7 +3,7 @@ url: "https://lichess.org/"  # Lichess base URL.
 
 engine:                      # Engine settings.
   dir: "./"          # Directory containing the engine. This can be an absolute path or one relative to lichess-bot/.
-  name: "sf"        # Binary name of the engine to use.
+  name: "stockfish"        # Binary name of the engine to use.
   working_dir: ""            # Directory where the chess engine will read and write files. If blank or missing, the current directory is used.
   protocol: "uci"            # "uci" or "xboard"
   ponder: true               # Think on opponent's time.
@@ -43,7 +43,7 @@ engine:                      # Engine settings.
       contribute: true
     lichess_cloud_analysis:
       enabled: true
-      min_time: 120
+      min_time: 40
       move_quality: "best"   # One of "good", "best".
       max_score_difference: 50 # Only for move_quality: "good". The maximum score difference (in cp) between the best move and the other moves.
       min_depth: 50
@@ -59,21 +59,20 @@ engine:                      # Engine settings.
   homemade_options:
 #   Hash: 256
   uci_options:               # arbitrary UCI options passed to the engine
- 
+option name Contempt type spin : 24  
 option name Analysis Contempt type combo: Both var Off var White var Black var Both
-option name Threads type spin: 30
-option name Hash type spin: 16
+option name Threads type spin: 20
+option name Hash type spin: 256
 option name Ponder type check: true
 option name MultiPV type spin: 1
 option name Skill Level type spin: 20
-option name Move Overhead type spin: 90
-option name Slow Mover type spin: 80
-option name nodestime type spin: 0
+option name Move Overhead type spin: 100
 option name UCI_Chess960 type check: true
 option name UCI_AnalyseMode type check: true
 option name UCI_Elo type spin: 2850
 option name UCI_ShowWDL type check: true
 option name Use NNUE type check: true
+
 #    go_commands:             # additional options to pass to the UCI go command
 #      nodes: 5000               # Search so many nodes only.
 #      depth: 20               # Search depth ply only.
