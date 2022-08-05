@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM ubuntu:jammy
 MAINTAINER RAVIHARAV
 RUN echo RAVIHARAV
 COPY . .
