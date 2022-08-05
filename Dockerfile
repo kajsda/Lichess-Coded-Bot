@@ -1,8 +1,5 @@
 FROM ubuntu:jammy
-MAINTAINER RAVIHARAV
-RUN echo RAVIHARAV
 COPY . .
-COPY requirements.txt .
 
 # If you want to run any other commands use "RUN" before.
 
