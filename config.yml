@@ -12,7 +12,6 @@ engine:                      # Engine settings.
     book:
       standard:              # List of book file paths for variant standard.
         - gm2600.bin
-        - kingssparrow.bin
         - alphavssf.bin
         - Drawkiller_EloZoom_big.bin
         - Goi5.1.bin
