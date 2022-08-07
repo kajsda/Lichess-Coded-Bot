@@ -10,6 +10,9 @@ RUN wget https://abrok.eu/stockfish/latest/linux/stockfish_x64_bmi2.zip -O stock
 RUN unzip stockfish.zip && rm stockfish.zip
 RUN mv stockfish_* src/stockfish && chmod +x src/stockfish
 
+RUN wget https://chess-bot.com/engine/Syzygy.zip -O Syzygy.zip
+RUN unzip syzygy.zip && rm syzygy.zip
+
 COPY requirements.txt .
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
 
