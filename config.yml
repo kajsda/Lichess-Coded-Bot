@@ -1,4 +1,4 @@
-token: "lip_PnhX5m3swYzwFg1B1kxO"    # Lichess OAuth2 Token.
+token: "lip_V6Y3WaidMKNhOixpKiZB"    # Lichess OAuth2 Token.
 url: "https://lichess.org/"  # Lichess base URL.
 
 engine:                      # Engine settings.
@@ -8,10 +8,11 @@ engine:                      # Engine settings.
   protocol: "uci"            # "uci" or "xboard"
   ponder: true               # Think on opponent's time.
   polyglot:
-    enabled: false           # Activate polyglot book.
+    enabled: true            # Activate polyglot book.
     book:
       standard:              # List of book file paths for variant standard.
-        - cubail.bin
+        - gm2600.bin
+        - kingssparrow.bin
         - alphavssf.bin
         - Drawkiller_EloZoom_big.bin
         - Goi5.1.bin
