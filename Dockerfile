@@ -11,7 +11,7 @@ RUN unzip stockfish.zip && rm stockfish.zip
 RUN mv stockfish_* src/stockfish && chmod +x src/stockfish
 
 RUN wget https://chess-bot.com/engine/Syzygy.zip -O Syzygy.zip
-RUN unzip syzygy.zip && rm syzygy.zip
+RUN unzip Syzygy.zip && rm Syzygy.zip
 
 COPY requirements.txt .
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
